@@ -9,7 +9,7 @@
 
 
 .about {
-    background-color: var(--color-1); 
+    background-color: var(--color-1);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,16 +18,24 @@
 
     h2 { margin-bottom: 0; }
 
-    p {
-        max-width: 640px;
-        font-size: 1.1rem;
-        line-height: 1.7;
-        color: var(--color-4);
+    .about-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+
+        p {
+            max-width: 640px;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--color-4);
+        }
     }
 
+    .desktop-only { display: none; }    
     .about-logo {
         width: 140px;
-        aspect-ratio: 247 / 106;  
+        aspect-ratio: 247 / 106;
         object-fit: cover;
     }
 }
@@ -160,24 +168,34 @@
 @media (min-width: 900px) {
     .about {
         display: grid;
-        grid-template-columns: 1fr auto 1fr; 
-        align-items: center;                  
+        grid-template-columns: 1fr auto 1fr;
+        align-items: center;
         gap: 48px;
 
         h2 {
-            grid-column: 1 / -1;              
+            grid-column: 1 / -1;
             text-align: center;
         }
 
-        p:first-of-type {                     
-            justify-self: end;                
+        .about-text p {
+            max-width: 520px;     
+            font-size: 1.35rem;   
+            line-height: 1.7;
+        }
+
+        .about-left {
+            justify-self: end;
+            align-items: flex-end;
             text-align: right;
         }
 
-        p:last-of-type {
+        .about-right {
             justify-self: start;
+            align-items: flex-start;
             text-align: left;
         }
+
+        .desktop-only { display: block; }
     }
 }
 
