@@ -74,3 +74,32 @@ if (menuToggle && navLinks) {
 
     window.matchMedia("(min-width: 701px)").addEventListener("change", closeMenu);
 }
+
+// Ampliar imagens da Tendência
+const lightbox = document.getElementById("lightbox");
+
+if (lightbox) {                               
+    const lightboxImg = lightbox.querySelector(".lightbox-img");
+
+    function openLightbox(img) {
+        lightboxImg.src = img.src;           
+        lightboxImg.alt = img.alt;
+        lightbox.showModal();                 
+    }
+
+    document.querySelectorAll(".card-img img").forEach((img) => {
+        img.tabIndex = 0;                    
+        img.setAttribute("role", "button");
+
+        img.addEventListener("click", () => openLightbox(img));
+
+        img.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                openLightbox(img);
+            }
+        });
+    });
+
+    lightbox.addEventListener("click", () => lightbox.close());
+}

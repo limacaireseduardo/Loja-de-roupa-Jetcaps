@@ -202,4 +202,63 @@
 @media (max-width: 600px) {
     .section { padding: 64px 4%; }
     .section h2 { font-size: 2rem; }
+
+    .trend .cards { justify-items: center; }
+
+    .trend .card {
+        width: 100%;
+        max-width: 320px;          
+        text-align: center;     
+    }
+
+    .trend .card .card-img { width: 100%; }
 }
+
+
+.trend .card-img img { cursor: zoom-in; }
+
+.lightbox {
+    border: 0;
+    padding: 0;
+    margin: auto;
+    background: transparent;
+    max-width: 100vw;
+    max-height: 100vh;
+
+    &::backdrop {
+        background-color: rgba(0, 0, 0, 0.9);   
+    }
+
+    &[open] .lightbox-img {
+        animation: zoomIn 0.25s ease;
+    }
+
+    .lightbox-img {
+        display: block;
+        max-width: 92vw;
+        max-height: 85vh;
+        object-fit: contain;
+        background-color: var(--color-4);   
+    }
+
+    .lightbox-close {
+        position: fixed;
+        top: 16px;
+        right: 16px;
+        width: 44px;
+        height: 44px;
+        border: 0;
+        border-radius: 50%;
+        background-color: var(--color-5);
+        color: var(--color-0);
+        font-size: 1.8rem;
+        line-height: 1;
+        cursor: pointer;
+    }
+}
+
+@keyframes zoomIn {
+    from { opacity: 0; transform: scale(0.92); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
