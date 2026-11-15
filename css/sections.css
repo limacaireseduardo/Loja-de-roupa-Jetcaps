@@ -37,7 +37,14 @@
     
     h2 {
         text-align: center;
-        margin: 56px;
+        margin-bottom: 56px;
+
+        .accent {
+            text-decoration: underline;
+            text-decoration-color: var(--color-6);   
+            text-decoration-thickness: 4px;          
+            text-underline-offset: 10px;           
+        }
     }
 
     .cards {
