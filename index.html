@@ -33,15 +33,27 @@
     <main>
         <!-- Inicio -->
         <section id="inicio" class="hero">
-            <button class="hero-image-box" id="capCarousel" type="button"
-                    aria-label="Clique para trocar o boné">
-                <img src="image/bone/bone-nike-preto.png"
-                     alt="Boné Nike preto com swoosh branco" class="hero-slide is-active">
-                <img src="image/bone/bone-adidas-azul.png"
-                     alt="Boné Adidas azul com logo branca" class="hero-slide">
-                <img src="image/bone/bone-preto-brasil.png"
-                     alt="Boné preto da seleção brasileira" class="hero-slide">
-            </button>
+           <div class="hero-carousel">
+                <button class="carousel-arrow carousel-prev" id="capPrev" type="button"
+                        aria-label="Boné anterior">
+                    <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+                </button>
+
+                <button class="hero-image-box" id="capCarousel" type="button"
+                        aria-label="Clique para trocar o boné">
+                    <img src="image/bone/bone-nike-preto.png"
+                         alt="Boné Nike preto com swoosh branco" class="hero-slide is-active">
+                    <img src="image/bone/bone-adidas-azul.png"
+                         alt="Boné Adidas azul com logo branca" class="hero-slide">
+                    <img src="image/bone/bone-preto-brasil.png"
+                         alt="Boné preto da seleção brasileira" class="hero-slide">
+                </button>
+
+                <button class="carousel-arrow carousel-next" id="capNext" type="button"
+                        aria-label="Próximo boné">
+                    <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </button>
+            </div>
             <div class="hero-text">
                 <h1>Estilo é pra quem <span>TEM</span>.</h1>
                 <p>Estilo, conforto e personalidade para completar seu fit.</p>

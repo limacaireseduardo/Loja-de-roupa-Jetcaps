@@ -23,6 +23,8 @@ sections.forEach((section) => observer.observe(section));
 
 // Carrossel de bonés: cada clique desliza para o próximo
 const carousel = document.getElementById("capCarousel");
+const capPrev = document.getElementById("capPrev");
+const capNext = document.getElementById("capNext");
 
 if (carousel) {
     const slides = carousel.querySelectorAll(".hero-slide");
@@ -39,9 +41,24 @@ if (carousel) {
         carousel.setAttribute("aria-label", "Trocar boné. Atual: " + slides[current].alt);
     }
 
-    carousel.addEventListener("click", () => {
+    function next() {
         current = (current + 1) % slides.length;
         render();
+    }
+
+    function prev() {
+        current = (current - 1 + slides.length) % slides.length;
+        render();
+    }
+
+    carousel.addEventListener("click", next);          // clicar no boné avança
+    if (capNext) capNext.addEventListener("click", next);
+    if (capPrev) capPrev.addEventListener("click", prev);
+
+    // setas do teclado, quando o círculo está selecionado
+    carousel.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowRight") next();
+        if (e.key === "ArrowLeft") prev();
     });
 
     render();

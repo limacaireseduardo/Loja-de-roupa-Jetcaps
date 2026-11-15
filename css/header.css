@@ -31,8 +31,10 @@ header {
             .nav-link {
                 color: var(--color-5);
                 text-decoration: none;
-                font-size: 1rem;
-                font-weight: 500;
+                font-family: 'Pirata One', 'Poppins', sans-serif;
+                font-weight: normal;           /* a fonte só existe no peso normal */
+                font-size: 1.4rem;             /* era 1rem */
+                letter-spacing: 0.5px;
                 padding: 8px 0;
                 white-space: nowrap;
                 border-bottom: 2px solid transparent;
@@ -110,6 +112,10 @@ header .menu-toggle[aria-expanded="true"] .bar:nth-child(3) { transform: transla
         padding: 8px 0;
         text-align: center;
     }
+
+    header .navbar .nav-links .nav-link {
+        font-size: 1.6rem;
+    }
 }
 
 @media (max-width: 380px) {
@@ -134,7 +140,7 @@ header .menu-toggle[aria-expanded="true"] .bar:nth-child(3) { transform: transla
     }
 
     header .navbar .nav-links .nav-link {
-        font-size: 1.3rem;
+        font-size: 1.8rem;
     }
 
     header .menu-toggle {

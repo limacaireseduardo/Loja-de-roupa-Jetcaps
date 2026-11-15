@@ -8,6 +8,36 @@
     padding: 72px 4%;
     background-color: var(--color-0);
 
+    .hero-carousel {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;   /* seta | círculo | seta */
+        align-items: center;
+        justify-items: center;
+        width: min(100%, 560px);
+    }
+
+    .carousel-arrow {
+        width: 32px;
+        height: 64px;                  /* área de toque alta, fácil de acertar */
+        border: 0;
+        background: none;
+        color: var(--color-5);
+        font-size: 1.4rem;
+        opacity: 0.35;                 /* bem sutil */
+        cursor: pointer;
+        transition: opacity 0.25s, color 0.25s, transform 0.25s;
+        -webkit-tap-highlight-color: transparent;
+
+        &:hover,
+        &:focus-visible {
+            opacity: 1;
+            color: var(--color-6);
+        }
+
+        &.carousel-prev:hover { transform: translateX(-3px); }
+        &.carousel-next:hover { transform: translateX(3px); }
+    }
+
     .hero-image-box {
         --size: min(80vw, 420px);
         position: relative;
@@ -64,14 +94,19 @@
         gap: 24px;
 
         h1 {
-            font-size: clamp(2.2rem, 7vw, 4.5rem);
+            font-family: 'Pirata One', 'Poppins', sans-serif;
+            font-weight: normal;                  /* a fonte só existe no peso normal */
+            font-size: clamp(3rem, 9vw, 5.5rem);
             line-height: 1.1;
+            letter-spacing: 1px;
 
             span { color: var(--color-6); }
         }
 
         p {
-            font-size: 1.1rem;
+            font-family: 'Pirata One', 'Poppins', sans-serif;
+            font-size: 1.3rem;               
+            letter-spacing: 0.5px;
             color: var(--color-4);
         }
 
@@ -114,6 +149,24 @@
     .hero { padding: 48px 4%; gap: 32px; }
 }
 
+@media (min-width: 900px) {
+    .hero .hero-text {
+        max-width: 760px;                    /* era 640px: acompanha a letra maior */
+    }
+
+    .hero .hero-text p {
+        font-size: 2rem;
+    }
+}
+
 @media (prefers-reduced-motion: reduce) {
     .hero .hero-image-box .hero-slide { transition-duration: 0.01s; }
+}
+
+@media (min-width: 900px) {
+    .hero .carousel-arrow {
+        width: 56px;
+        height: 96px;
+        font-size: 2rem;
+    }
 }
