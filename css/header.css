@@ -48,7 +48,6 @@ header {
     }
 }
 
-/* Botão de 3 riscos: FORA do bloco header (escondido no desktop) */
 header .menu-toggle {
     display: none;
     flex-direction: column;
@@ -65,7 +64,7 @@ header .menu-toggle {
 }
 
 header .menu-toggle .bar {
-    display: block;                  /* sem isso o risco não ganha largura/altura */
+    display: block;                 
     width: 26px;
     height: 3px;
     background-color: var(--color-5);
@@ -73,12 +72,10 @@ header .menu-toggle .bar {
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* menu aberto: os riscos viram um X */
 header .menu-toggle[aria-expanded="true"] .bar:nth-child(1) { transform: translateY(9px) rotate(45deg); }
 header .menu-toggle[aria-expanded="true"] .bar:nth-child(2) { opacity: 0; }
 header .menu-toggle[aria-expanded="true"] .bar:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
 
-/* CELULAR */
 @media (max-width: 700px) {
     header .navbar .logo { height: 56px; }
 
@@ -119,7 +116,6 @@ header .menu-toggle[aria-expanded="true"] .bar:nth-child(3) { transform: transla
     header .navbar .logo { height: 44px; }
 }
 
-/* DESKTOP: menu centralizado e letras maiores */
 @media (min-width: 900px) {
     header .navbar {
         display: grid;

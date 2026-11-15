@@ -58,23 +58,19 @@ if (menuToggle && navLinks) {
         menuToggle.setAttribute("aria-label", "Abrir menu");
     }
 
-    // abre e fecha ao clicar no botão
     menuToggle.addEventListener("click", () => {
         const isOpen = navLinks.classList.toggle("open");
         menuToggle.setAttribute("aria-expanded", isOpen);
         menuToggle.setAttribute("aria-label", isOpen ? "Fechar menu" : "Abrir menu");
     });
 
-    // fecha ao escolher um item do menu
     navLinks.querySelectorAll("a").forEach((link) => {
         link.addEventListener("click", closeMenu);
     });
 
-    // fecha com a tecla Esc
     document.addEventListener("keydown", (e) => {
         if (e.key === "Escape") closeMenu();
     });
 
-    // se a tela aumentar (ex.: girar o celular), fecha o menu
     window.matchMedia("(min-width: 701px)").addEventListener("change", closeMenu);
 }
