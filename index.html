@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>JetCaps</title>
+</head>
+<body>
+    <header id="header">
+        <nav class="navbar">
+            <a href="#inicio">
+                <img src="image/jetcapsLogo.png" alt="JetCaps Logo" class="logo">
+            </a>
+
+             <button class="menu-toggle" id="menuToggle" type="button"
+                    aria-label="Abrir menu" aria-expanded="false" aria-controls="navLinks">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+             </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#inicio" class="nav-link">Início</a></li>
+                <li><a href="#sobre" class="nav-link">Sobre nós</a></li>
+                <li><a href="#tendencia" class="nav-link">Tendência</a></li>
+                <li><a href="contato.html" class="nav-link">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Inicio -->
+        <section id="inicio" class="hero">
+            <button class="hero-image-box" id="capCarousel" type="button"
+                    aria-label="Clique para trocar o boné">
+                <img src="image/bone/bone-nike-preto.png"
+                     alt="Boné Nike preto com swoosh branco" class="hero-slide is-active">
+                <img src="image/bone/bone-adidas-azul.png"
+                     alt="Boné Adidas azul com logo branca" class="hero-slide">
+                <img src="image/bone/bone-preto-brasil.png"
+                     alt="Boné preto da seleção brasileira" class="hero-slide">
+            </button>
+            <div class="hero-text">
+                <h1>Bonés com <span>atitude</span>.</h1>
+                <p>Estilo, conforto e personalidade para completar seu look.</p>
+                <div class="hero-buttoncs">
+                    <a href="#tendencia" class="btn">Ver tendências</a>
+                    <a href="contato.html" class="btn btn-outline">Contatar</a>
+                </div>
+            </div>
+        </section>
+              <!-- About -->
+        <section id="sobre" class="section about">
+            <h2>Sobre nós</h2>
+            <p>[PRIMEIRA FRASE] Somos a JetCaps, uma loja feita para quem gosta de estilo.</p>
+            <img src="image/logo/nike-white-logo.png" alt="Nike" class="about-logo">
+            <p>[SEGUNDA FRASE] Trabalhamos com produtos de marcas que você já conhece e confia.</p>
+        </section>
+        <!-- trending -->
+        <section id="tendencia" class="section trend">
+            <h2>Tendência</h2>
+            <div class="cards">
+                <article class="card">
+                    <div class="card-img">
+                        <img src="image/bone/bone-nike-preto.png" 
+                             alt="Boné Nike Preto">
+                    </div>
+                    <h3>Boné Nike Preto</h3>
+                    <h3>[descricao curtinha]</h3>
+                </article>
+                <article class="card">
+                    <div class="card-img">
+                        <img src="image/bone/bone-adidas-azul.png" 
+                             alt="Bone Adidas azul">
+                    </div>
+                    <h3>Nike Dunk Low Retro</h3>
+                    <p>[Descrição curta]</p>
+                </article>
+                <article class="card">
+                    <div class="card-img">
+                        <img src="image/tenis/nike.dunk-low-retro.avif" 
+                             alt="Tenis Dunk preto">
+                    </div>
+                    <h3>[MODELO 3]</h3>
+                    <p>[Descrição curta]</p>
+                </article>
+                <article class="card">
+                    <div class="card-img">
+                        <img src="image/bone/bone-preto-brasil.png" 
+                             alt="Bone preto brasil">
+                    </div>
+                    <h3>Nike Dunk Low Retro</h3>
+                    <p>[Descrição curta]</p>
+                </article>
+                <article class="card">
+                    <div class="card-img">[FOTO]</div>
+                    <h3>[MODELO 3]</h3>
+                    <p>[Descrição curta]</p>
+                </article>
+                </article>
+                <article class="card">
+                    <div class="card-img">[FOTO]</div>
+                    <h3>[MODELO 3]</h3>
+                    <p>[Descrição curta]</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+     <footer>
+        <p>© JetCaps · <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

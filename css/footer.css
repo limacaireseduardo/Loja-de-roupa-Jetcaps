@@ -1,0 +1,14 @@
+footer {
+    background-color: var(--color-0);
+    padding: 16px 4%;         
+    font-size: 0.85rem;        
+    text-align: center;
+    color: var(--color-3);
+
+    a {
+        color: var(--color-5);
+        margin-left: 8px;
+
+        &:hover { color: var(--color-6); }
+    }
+}
