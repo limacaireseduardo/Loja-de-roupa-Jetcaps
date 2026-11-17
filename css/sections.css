@@ -7,7 +7,7 @@
     }
 }
 
-
+/* ===== SOBRE NÓS ===== */
 .about {
     background-color: var(--color-1);
     display: flex;
@@ -29,17 +29,18 @@
         align-items: center;
         gap: 16px;
 
-          p {
+        p {
             max-width: 640px;
             font-family: 'Pirata One', 'Poppins', sans-serif;
-            font-size: 1.3rem;              
+            font-size: 1.3rem;
             letter-spacing: 0.5px;
             line-height: 1.5;
             color: var(--color-4);
         }
     }
 
-    .desktop-only { display: none; }    
+    .desktop-only { display: none; }
+
     .about-logo {
         width: 140px;
         aspect-ratio: 247 / 106;
@@ -47,9 +48,10 @@
     }
 }
 
+/* ===== TENDÊNCIA ===== */
 .trend {
     background-color: var(--color-0);
-    
+
     h2 {
         font-family: 'Pirata One', 'Poppins', sans-serif;
         font-weight: normal;
@@ -76,19 +78,33 @@
         flex-direction: column;
         gap: 8px;
 
-        .card-img {
+           .card-img {
             height: 260px;
             display: grid;
             place-items: center;
-            background-color: var(--color-4);
             color: var(--color-1);
             border-radius: 12px;
             overflow: hidden;
 
+            background-color: var(--color-4);
+            background-image: var(--card-bg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            &:hover {
+                border-color: var(--color-6);
+            }
+
             img {
                 width: 100%;
                 height: 100%;
-                object-fit: contain;   
+                object-fit: contain;
+                padding: 14px;                    
+                filter:
+                drop-shadow(0 0 1px rgba(0, 0, 0, 0.6))     
+                drop-shadow(0 0 4px rgba(0, 0, 0, 0.35))    
+                drop-shadow(0 8px 10px rgba(0, 0, 0, 0.3));
             }
         }
 
@@ -98,90 +114,32 @@
             font-size: 1.8rem;
             letter-spacing: 0.5px;
         }
-        
+
         p { color: var(--color-4); }
     }
 }
 
-.contact {
-    flex: 1;
-    padding: 64px 4%;
-    background-color: var(--color-1);
-    min-height: 70vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    gap: 24px;
+/* ===== CELULAR ===== */
+@media (max-width: 600px) {
+    .section { padding: 64px 4%; }
+    .section h2 { font-size: 2rem; }
 
-    h2 { margin-bottom: 0; }
+    /* títulos em Pirata One ficam maiores (vem depois da regra acima, para vencer) */
+    .about h2,
+    .trend h2 { font-size: 2.6rem; }
 
-    p { color: var(--color-4); max-width: 520px; }
+    .trend .cards { justify-items: center; }
 
-     .contact-cards {
-        display: flex;
-        flex-wrap: wrap;          
-        justify-content: center;
-        gap: 24px;
+    .trend .card {
         width: 100%;
+        max-width: 320px;
+        text-align: center;
     }
+
+    .trend .card .card-img { width: 100%; }
 }
 
-.how {
-    background-color: var(--color-0);
-    text-align: center;
-    display: none;                 
-    background-color: var(--color-0);
-    text-align: center;
-
-    h2 { margin-bottom: 48px; }
-
-    .steps {
-        list-style: none;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 32px;
-        max-width: 960px;
-        margin: 0 auto;
-    }
-
-    .step {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 8px;
-
-        .step-icon {
-            width: 72px;
-            height: 72px;
-            border-radius: 50%;
-            border: 2px solid var(--color-6);
-            color: var(--color-6);
-            font-size: 1.8rem;
-            display: grid;
-            place-items: center;
-            margin-bottom: 8px;
-        }
-
-        .step-label {
-            font-size: 0.8rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--color-3);
-        }
-
-        h3 { font-size: 1.25rem; }
-
-        p { color: var(--color-4); max-width: 260px; }
-
-        a {
-            color: var(--color-6);
-            text-decoration: underline;
-        }
-    }
-}
-
+/* ===== DESKTOP ===== */
 @media (min-width: 900px) {
     .about {
         display: grid;
@@ -195,8 +153,8 @@
         }
 
         .about-text p {
-            max-width: 560px;     
-            font-size: 2rem;   
+            max-width: 560px;
+            font-size: 2rem;
             line-height: 1.5;
         }
 
@@ -214,32 +172,14 @@
 
         .desktop-only { display: block; }
     }
-}
 
-@media (max-width: 600px) {
-    .section { padding: 64px 4%; }
-    .section h2 { font-size: 2rem; }
-
-    .trend .cards { justify-items: center; }
-
-    .trend .card {
-        width: 100%;
-        max-width: 320px;          
-        text-align: center;     
-    }
-
-    .trend .card .card-img { width: 100%; }
-}
-
-
-@media (min-width: 900px) {
     .about h2,
     .trend h2 {
-        font-size: 4.5rem;         
+        font-size: 4.5rem;
     }
 
     .trend h2 {
-        margin-bottom: 72px;       
+        margin-bottom: 72px;
 
         .accent {
             text-decoration-thickness: 5px;
@@ -248,6 +188,7 @@
     }
 }
 
+/* ===== FOTO AMPLIADA (LIGHTBOX) ===== */
 .trend .card-img img { cursor: zoom-in; }
 
 .lightbox {
@@ -259,7 +200,7 @@
     max-height: 100vh;
 
     &::backdrop {
-        background-color: rgba(0, 0, 0, 0.9);   
+        background-color: rgba(0, 0, 0, 0.9);
     }
 
     &[open] .lightbox-img {
@@ -268,10 +209,17 @@
 
     .lightbox-img {
         display: block;
-        max-width: 92vw;
-        max-height: 85vh;
+        width: min(92vw, 85vh, 640px);
+        aspect-ratio: 1;
         object-fit: contain;
-        background-color: var(--color-4);   
+        border-radius: 12px;
+        border: 2px solid var(--color-3);
+
+        background-color: var(--color-4);
+        background-image: var(--card-bg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
     }
 
     .lightbox-close {
@@ -294,4 +242,3 @@
     from { opacity: 0; transform: scale(0.92); }
     to   { opacity: 1; transform: scale(1); }
 }
-

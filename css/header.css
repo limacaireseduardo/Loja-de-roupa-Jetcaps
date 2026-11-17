@@ -1,5 +1,12 @@
 header {
-    background-color: var(--color-0);
+    background-color: var(--color-0);               /* reserva, enquanto a imagem carrega */
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+        url('../image/background-nav.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
     padding: 12px 4%;
     position: sticky;
     top: 0;
@@ -20,6 +27,7 @@ header {
             height: 80px;
             width: auto;
             display: block;
+            border-radius: 50%; 
         }
 
         .nav-links {
